@@ -1,15 +1,16 @@
 {
-    "name" : "GuardianWebShield",
-    "version" : "0.0.1",
-    "description" : "Website blocker",
-    "manifest_version" : 2,
-    "permissions" : ["webRequest", "webRequestBlocking", "<all_urls>"],
-    "background" : {
-        "scripts" : ["background.js"]
+    "name": "GuardianWebShield",
+    "version": "0.0.1",
+    "description": "Website blocker",
+    "manifest_version": 3,
+    "permissions": ["webRequest", "webRequestBlocking", "<all_urls>"],
+    "service_worker": {
+        "script": "service-worker.js",
+        "persistent": false
     },
-    "icons" : {
-        "16" : "shield.png",
-        "48" : "shield.png",
-        "128" : "shield.png"
+    "icons": {
+        "16": "shield.png",
+        "48": "shield.png",
+        "128": "shield.png"
     }
 }
