@@ -12,7 +12,7 @@ const defaultFilters = [
 ];
 
 // Function to add event listener with defaultFilters
-function addListenerWithDefaultFilters(defaultFilters) {
+function addListenerWithDefaultFilters() {
     chrome.webRequest.onBeforeRequest.addListener(
         function(details) { return { cancel: true }; },
         { urls: defaultFilters },
@@ -20,8 +20,5 @@ function addListenerWithDefaultFilters(defaultFilters) {
     );
 }
 
-// Event listener to wait for extension to fully load
-chrome.runtime.onInstalled.addListener(function() {
-    // Call the function with defaultFilters as parameter
-    addListenerWithDefaultFilters(defaultFilters);
-});
+// Call the function with defaultFilters as parameter
+addListenerWithDefaultFilters();
